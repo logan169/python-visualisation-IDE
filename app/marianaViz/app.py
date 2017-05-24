@@ -1,8 +1,9 @@
 import os
 import flask
 import json
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,Markup
 import script_python.kernel as K
+
 
 
 def App():
@@ -13,8 +14,8 @@ def App():
     #return index.html on load
     @app.route('/')
     def index():
-      #return flask.send_from_directory(app.static_folder,"matrice.html")
-      return flask.send_from_directory(app.static_folder,"lala.html")
+      return flask.send_from_directory(app.static_folder,"matrice.html")
+      #return flask.send_from_directory(app.static_folder,"lala.html")
       
     
     #return mariana information
@@ -24,7 +25,7 @@ def App():
         print (v) # for testing
 
         if v == 'matrice':
-            resp = 'Thats working!'
+            resp = Markup("<h1>Voila! Platform is ready to used</h1>")
             
         return flask.jsonify(**K.JSONResponse(data = resp, error = False,message = ''))
         
