@@ -6,8 +6,8 @@ var app = new Vue({
     message: 'Empty data'
   },
   methods:{
-  	changeView: function(){
-  		this.$http.get('http://jsonplaceholder.typicode.com/posts')
+  	changeView: function(v){
+  		this.$http.get('/view/'+v)
   			.then(function(resp){
   				this.message = resp;
   			})

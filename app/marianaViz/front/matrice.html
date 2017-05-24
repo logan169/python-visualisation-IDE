@@ -2,7 +2,9 @@
 <html>
 	<head>
 	 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-		<script src="https://unpkg.com/vue"></script>
+	 <script src="https://unpkg.com/vue"></script>
+	 <script type="text/javascript" src="/front/lala_web/matrice.js"></script>
+		
 	</head>
 	<body>
 
@@ -10,10 +12,10 @@
 			<p v-bind:title='message'>
 				{{ message }}
 			<p>
-			<button v-on:click='changeView'>get data</button>
+			<button v-on:click='changeView('matrice')'>get data</button>
 
 
 		</div>
 	</body>
-	<script type="text/javascript" src="/front/lala_web/matrice.js"></script>
+	
 </html>
