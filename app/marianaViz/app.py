@@ -13,20 +13,23 @@ def App():
     #return index.html on load
     @app.route('/')
     def index():
-      return flask.send_from_directory(app.static_folder,"matrice.html")
-      #return flask.send_from_directory(app.static_folder,"lala.html")
+      #return flask.send_from_directory(app.static_folder,"matrice.html")
+      return flask.send_from_directory(app.static_folder,"lala.html")
       
     
     #return mariana information
-    @app.route('/view/<v>/', methods=['get'])
+    @app.route('/view/<v>/', methods=['GET'])
     def changeView(v):
         
-        if view == 'matrice':
+        print (v) # for testing
+
+        if v == 'matrice':
             resp = 'Thats working!'
             
         return flask.jsonify(**K.JSONResponse(data = resp, error = False,message = ''))
-    
-    
+        
+        
+
     return app
 
 

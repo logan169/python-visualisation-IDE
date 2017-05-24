@@ -86,23 +86,27 @@ Vue.component('graph-view', {
                   <span uk-icon="icon: code; ratio: 2"></span>
               </button>
               
+
+              <div v-bind:style="{height: height + 'px'}" ref="network"></div>
+              
               <!-- dropdown button for view!-->
               <div class="uk-inline">
-                  <button class="uk-button uk-button-primary uk-button-medium vulcan-button-primary" type="button"> Change view</button>
+                  <button class="uk-button uk-button-primary uk-button-medium vulcan-button-primary" type="button"> Change view<svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" icon="triangle-up" ratio="2"><polygon points="5 13 10 8 15 13"></polygon></svg></button>
                   <div uk-dropdown>
                       <ul class="uk-nav uk-dropdown-nav">
                         <!--
-                        <li v-on:click="showTopography()>Network topography</li>
-                        <li v-on:click="showActivationMatrice()>Activation matrice</li>
+                        <li v-on:click="changeView('topography')>Network topography</li>
+                        <li v-on:click="changeView('matrice')>Activation matrice</li>
+                        <li v-on:click="changeView('distributon')>Gradient distribution</li>
+                        <li v-on:click="changeView('embedding')>Embedding</li>
                         !-->
-
                         <li><a>Network topography</a></li>
                         <li><a>Activation matrice</a></li>
+                        <li><a>Gradient distribution</a></li>
+                        <li><a>Embedding</a></li>
                       </ul>
                   </div>
               </div>
-
-              <div v-bind:style="{height: height + 'px'}" ref="network"></div>
               <div class="uk-button-group">
                   <button class="uk-button uk-button-medium uk-button-primary vulcan-button-primary" v-on:click="decreaseHeight()">
                       <span uk-icon="icon: triangle-up; ratio: 2"></span>

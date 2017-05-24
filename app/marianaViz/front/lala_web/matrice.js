@@ -7,11 +7,22 @@ var app = new Vue({
   },
   methods:{
   	changeView: function(v){
-  		this.$http.get('/view/'+v)
-  			.then(function(resp){
-  				this.message = resp.data;
-  			})
-  			.catch(function(){alert('Error')});
-  		}
-  	}
+    var viewUrl = '/view/'
+    var self = this;
+
+    $.ajax({
+       url: viewUrl+v,
+       method: 'GET',
+       success: function (resp) {
+            if (resp.error == false){
+                console.log(resp)
+                self.message = resp.data
+            }
+       },
+       error: function (error) {
+           console.log(error)
+       }
+   });
+}
+}
 })
