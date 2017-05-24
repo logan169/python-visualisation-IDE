@@ -9,7 +9,7 @@ var app = new Vue({
   	changeView: function(v){
   		this.$http.get('/view/'+v)
   			.then(function(resp){
-  				this.message = resp;
+  				this.message = resp.data;
   			})
   			.catch(function(){alert('Error')});
   		}
