@@ -33,7 +33,7 @@
 		
 
 
-			<button v-on:click='changeView("matrice"),drawEmbeddingVisualization(),drawMatriceVisualization()'>get data</button>
+			<button v-on:click='changeView("matrice"),draw3dScatterPlot(),drawMatrice(),drawMatriceWave(),drawMultiHistogram(),drawHistogram()'>get data</button>
 
 	
 			<div id="embedding" ></div>
@@ -42,8 +42,13 @@
 			<script>function onclick(point) {console.log(point);}</script>
 
 
-<div id="matrice"></div>
+			<div id="matrice"></div>
 
+			<div id="histogram"></div>
+
+			<div id="multiHistogram"></div>
+
+			<div id="matriceWave"></div>
 
 
 		</div>

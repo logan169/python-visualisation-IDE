@@ -1,8 +1,7 @@
 import os
 import flask
 import json
-from flask import Flask, render_template, request, redirect, url_for,Markup
-import script_python.kernel as K
+from flask import Flask, render_template, request, redirect, url_for
 
 
 
@@ -25,7 +24,7 @@ def App():
         print (v) # for testing
 
         if v == 'matrice':
-            resp = Markup("<h1>Voila! Platform is ready to used</h1>")
+            resp = ("<h1>Voila! Platform is ready to used</h1>")
             
         return flask.jsonify(**K.JSONResponse(data = resp, error = False,message = ''))
         
