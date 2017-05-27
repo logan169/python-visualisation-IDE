@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+	<!--Vuejs-->
+	<script src="https://unpkg.com/vue"></script>
+	<!--css-->
+	<link href="{{url_for ('static',filename='css/disp.css')}}" rel="stylesheet" type="text/css"/>
+	<!--Vis visualisation lib-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.js"></script>
+	<!--<script type="text/javascript" src="/front/lala_web/vis.js"></script>-->
+
+	</head>
+
+	<body>
+
+		<div id="app">
+			<h2>Multi Histograms:</h2>
+			<div id="multiHistogram"></div>
+
+		</div>
+	</body >
+		<!--display.js-->
+		 <script type="text/javascript" src="{{url_for ('static',filename='js/multiHistogram.js')}}"></script>
+
+</html>
