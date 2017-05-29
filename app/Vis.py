@@ -33,32 +33,45 @@ class Vis:
 		return r.text
 
 	def formatData(self):
-		"""Fonction thats format an array into a vis dataset
-Works for histogram, multihistogram
-		"""
+		"""Fonction thats format an matrice into a visualizable dataset"""
 
 		array = self.raw_input['data']
 
 		out = []
 
-		for y in range (len(array)):
-			for x in range(len(array[y])):
-				out.append({'x': x, 'y':y, 'z':array[y][x]})
-
 		# compute array size and group size to use
-		array_size =  len(out)
-		group_size = len(array[y])
+		array_size =  len(array[0])*len(array)
+		group_size = len(array[0])
 
-		if array_size > self.limit_size:
+		f = -1
 
-			#update self.input['option'] for visualisation
+		# format data for 3d scatter plot
+		if 'label' in self.raw_input:
+			for y in range (len(array)):
+				d = {'x': array[y][0], 'y':array[y][1], 'z':array[y][2],'style':self.raw_input['label'][y]}
 
-			#add filter key for animation
-			f = -1
-			for i in range(array_size):
-				if i%group_size == 0:
-					f+=1
-				out[i]['filter'] = f*group_size
+				#add filter key for animation
+				if array_size > self.limit_size:
+					if i%group_size == 0:
+						f+=1
+					d['filter'] = f*group_size
+
+				out.append(d)
+
+		#format data for any other visu
+		else:
+			for y in range (len(array)):
+				for x in range(len(array[y])):
+
+					d = {'x': x, 'y':y, 'z':array[y][x]}
+
+					#add filter key for animation
+					if array_size > self.limit_size:
+						if i%group_size == 0:
+							f+=1
+						d['filter'] = f*group_size
+
+					out.append(d)
 
 		return out
 
@@ -244,17 +257,17 @@ Works for histogram, multihistogram
 		  'verticalRatio': 0.5,
 		  "backgroundColor":'black',
 		  'cameraPosition': {
-			'horizontal': 0,
-			'vertical': 0.5*3.14,
-			'distance': 1.8
-		  },
+			'horizontal': 0.1*3.14,
+			'vertical': 0.1*3.14,
+			'distance': 2.2
+		   },
 		  "showXAxis":False,
 		  "showYAxis":False,
 		  "showZAxis":False,
 		  
 		  'legendLabel': '',
 		  "showLegend":True,
-		  "xCenter":'40%'
+		  "xCenter":'50%'
 		}
 
 
@@ -288,7 +301,7 @@ Works for histogram, multihistogram
 			'cameraPosition': {
 			  'horizontal': -0.35,
 			  'vertical': 0.22,
-			'distance': 22.2
+			'distance': 2.2
 				  },
 			"backgroundColor":'black',
 			'legendLabel': 'Labels',
@@ -311,6 +324,8 @@ Works for histogram, multihistogram
 		self.updateData(self.input)
 
 
+#############################################
+
 def makeRndData(size):
 	return np.random.rand(size[0],size[1])
 
@@ -319,6 +334,7 @@ data1 = makeRndData((1,25))
 d1 = {'data' : data1}
 data2 = makeRndData((25,25))
 d2 = {'data' : data2}
+
 
 #Create an instance and input data array
 vis1 = Vis(d1)
@@ -334,4 +350,15 @@ vis2 = Vis(d2)
 multihistogram = vis2.multiHistogram()
 matrice = vis2.matrice()
 matriceWave = vis2.matriceWave()
-scatterPlot3D = vis2.scatterPlot3D()
+
+#Create an instance and input data array
+data3 = makeRndData((4,3))
+label = [1,2,3,4]
+d3 = {
+	'data' : data3,
+	'label':label
+	}
+
+vis3 = Vis(d3)
+scatterPlot3D = vis3.scatterPlot3D()
+
