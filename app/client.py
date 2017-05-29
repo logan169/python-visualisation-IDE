@@ -17,12 +17,14 @@ def formatData(array,group_size=1000):
 		for x in range(len(array[y])):
 			out.append({'x': x, 'y':y, 'z':array[y][x]})
 
-	size =  len(out)
-	if size > 1000:
+	array_size =  len(out)
+	group_size = len(array[y])
+	
+	if array_size > 1000:
 
 		#add filter key for animation
 		f = -1
-		for i in range(len(out)):
+		for i in range(array_size):
 			if i%group_size == 0:
 				f+=1
 			out[i]['filter'] = f*group_size
@@ -46,7 +48,7 @@ def makeRndData(style,size,option={}):
 
 
 
-makeRndData('multiHist',(20,20),option)
+makeRndData('multiHist',(20,20))
 
 # animation
 option = {
@@ -54,6 +56,7 @@ option = {
 	'animationInterval': 1, 
     'animationPreload': True,
 }
-makeRndData('multiHist',(100,500),option)
+
+makeRndData('multiHist',(500,500),option)
 
 
