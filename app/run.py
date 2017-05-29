@@ -2,8 +2,8 @@
 
 
 #file to execute in order to launch the app
-from marianaViz.app import App
+from Viz.app import App
 
 app=App()
 
-app.run()
+app.run(debug=True)

@@ -9685,3 +9685,5 @@ return Vue$3;
 
 })));
 
+Vue.config.delimiters = ["${", "}"];
+
