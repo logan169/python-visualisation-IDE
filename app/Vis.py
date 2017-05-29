@@ -42,6 +42,14 @@ class Vis:
 		# compute array size and group size to use
 		array_size =  len(array[0])*len(array)
 		group_size = len(array[0])
+		
+		# update option dic for animation
+		if array_size > self.limit_size:
+		 	self.input['option'].update({
+		 		'showAnimationControls': True,
+			 	'animationInterval': 100, 
+			    'animationPreload': True,
+			})
 
 		f = -1
 
@@ -52,9 +60,10 @@ class Vis:
 
 				#add filter key for animation
 				if array_size > self.limit_size:
-					if i%group_size == 0:
+					if y%self.limit_size == 0:
 						f+=1
-					d['filter'] = f*group_size
+					d['filter'] = f
+
 
 				out.append(d)
 
@@ -62,14 +71,12 @@ class Vis:
 		else:
 			for y in range (len(array)):
 				for x in range(len(array[y])):
-
-					d = {'x': x, 'y':y, 'z':array[y][x]}
-
 					#add filter key for animation
-					if array_size > self.limit_size:
-						if i%group_size == 0:
-							f+=1
-						d['filter'] = f*group_size
+					if array_size > self.limit_size and self.input['style'] not in ['matrice','matriceWave']:
+						d = {'x': x, 'y':y, 'z':array[y][x],'filter':y}
+					else:
+						d = {'x': x, 'y':y, 'z':array[y][x]}
+
 
 					out.append(d)
 
@@ -332,7 +339,7 @@ def makeRndData(size):
 #create some data
 data1 = makeRndData((1,25))
 d1 = {'data' : data1}
-data2 = makeRndData((25,25))
+data2 = makeRndData((101,101))
 d2 = {'data' : data2}
 
 
@@ -352,8 +359,8 @@ matrice = vis2.matrice()
 matriceWave = vis2.matriceWave()
 
 #Create an instance and input data array
-data3 = makeRndData((4,3))
-label = [1,2,3,4]
+data3 = makeRndData((1001,3))
+label = np.arange(1001)
 d3 = {
 	'data' : data3,
 	'label':label
