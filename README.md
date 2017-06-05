@@ -69,6 +69,7 @@ Note that you could also pass a key 'option' containing a personalized option di
     
     $ d2_multiHist = vis2.multiHistogram() #make a multi histogram
 ![multi histogram](/multiHist.png)
+
 Note that this dataset is higher than the Vis object attribut limit_size (def: 1000) so data are displayed as an animation.
 You could change this with:
     
