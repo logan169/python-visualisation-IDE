@@ -47,7 +47,7 @@ class Vis:
 		if array_size > self.limit_size:
 		 	self.input['option'].update({
 		 		'showAnimationControls': True,
-			 	'animationInterval': 100, 
+			 	'animationInterval': 1, 
 			    'animationPreload': True,
 			})
 
@@ -118,8 +118,9 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'hist'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = hist_option
+		self.input['data'] = self.formatData()
+
 
 		#send modification to server
 		self.updateData(self.input)
@@ -139,12 +140,13 @@ class Vis:
 		   'showShadow': False,
 		   "xLabel":'',
 		   "zLabel":'',
-		   'yLabel':'Histograms',
+		   'yLabel':'',
 		   'cameraPosition': {
 			'horizontal': 0.1*3.14,
 			'vertical': 0.1*3.14,
 			'distance': 2.2
 			  },
+			
 			'legendLabel': '',
 			'keepAspectRatio': True,
 			'verticalRatio': 0.5,
@@ -160,8 +162,9 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'multiHist'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = multiHist_option
+		self.input['data'] = self.formatData()
+
 
 		#send modification to server
 		self.updateData(self.input)
@@ -203,8 +206,9 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'linePlot'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = linePlot_option
+		self.input['data'] = self.formatData()
+
 
 		#send modification to server
 		self.updateData(self.input)
@@ -243,8 +247,8 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'matrice'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = matrice_option
+		self.input['data'] = self.formatData()
 
 		#send modification to server
 		self.updateData(self.input)
@@ -286,8 +290,8 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'matriceWave'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = matriceWave_option
+		self.input['data'] = self.formatData()
 
 		#send modification to server
 		self.updateData(self.input)
@@ -324,8 +328,8 @@ class Vis:
 		#update class attr
 		self.input['style'] = 'scatter'
 		self.input['visible'] = True
-		self.input['data'] = self.formatData()
 		self.input['option'] = scatterPlot3D_option
+		self.input['data'] = self.formatData()
 
 		#send modification to server
 		self.updateData(self.input)
@@ -355,8 +359,6 @@ vis2 = Vis(d2)
 
 #make vis from instance created
 multihistogram = vis2.multiHistogram()
-matrice = vis2.matrice()
-matriceWave = vis2.matriceWave()
 
 #Create an instance and input data array
 data3 = makeRndData((1001,3))
@@ -368,4 +370,16 @@ d3 = {
 
 vis3 = Vis(d3)
 scatterPlot3D = vis3.scatterPlot3D()
+
+#Create an instance and input data array
+data4 = makeRndData((10,10))
+d4 = {
+	'data' : data4,
+	}
+vis4 = Vis(d4)
+
+#make vis from instance created
+matrice = vis4.matrice()
+matriceWave = vis4.matriceWave()
+
 

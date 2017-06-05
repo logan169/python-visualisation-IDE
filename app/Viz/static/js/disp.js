@@ -2,7 +2,6 @@
 //matriceWave
 Vue.component('matriceWave',{
   template : '<div><h2>Wave matrice:</h2><div id="matriceWave"></div></div>',
-  props:['input'],
   mounted:function(){
         this.drawMatriceWave(i.matriceWave.data,i.matriceWave.option)
       },
@@ -30,7 +29,6 @@ Vue.component('matriceWave',{
 //matrice
 Vue.component('matrice',{
   template : '<div><h2>Matrice:</h2><div id="matrice">{{input}}</div></div>',
-  props:['input'],
   mounted:function(){
         this.drawMatrice(i.matrice.data,i.matrice.option)
       },
@@ -70,7 +68,6 @@ Vue.component('matrice',{
 //scatterplot
 Vue.component('scatterPlot',{
   template : '<div><h2>3D scatter plot:</h2><div id="3dScatterPlot"></div></div></div>',
-  props:['input'],
   mounted:function(){
       this.draw3dScatterPlot(i.scatter.data,i.scatter.option)
     },
@@ -129,7 +126,6 @@ Vue.component('scatterPlot',{
 //Multi histogram
 Vue.component('multiHistogram',{
   template : '<div><h2>Multi Histograms:</h2><div id="multiHistogram"></div></div>',
-  props:['input'],
   mounted:function(){
       this.drawMultiHistogram(i.multiHist.data,i.multiHist.option)
     },
@@ -160,7 +156,6 @@ Vue.component('multiHistogram',{
 //Line plot
 Vue.component('linePlot',{
   template : '<div><h2>Line plot:</h2><div id="linePlot"></div></div>',
-  props:['input'], // don't work
   mounted:function(){
 
       this.drawHistogram(i.linePlot.data,i.linePlot.option) // should be input but don't work
@@ -190,7 +185,6 @@ Vue.component('linePlot',{
 //Histogram
 Vue.component('histogram',{
   template : '<div><h2>Histogram:</h2><div id="histogram"></div></div>',
-  props:['input'], // don't work
   mounted:function(){
       this.drawHistogram(i.hist.data,i.hist.option) // should be input but don't work
     },
