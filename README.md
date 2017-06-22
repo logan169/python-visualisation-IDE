@@ -173,32 +173,27 @@ Now we make some vega objects from d1 and d2 and use them to generate visualizat
 
 
 	barChart1 = vg1.barChart() # make a bar chart
-![barChart1](/picts/barChart.png)
-
 	lineChart = vg1.lineChart() # make a line 
+![barChart1](/picts/barChart.png)
 ![lineChart](/picts/lineChart.png)
 
 	areaChart = vg1.areaChart() # make an area chart
-![areaChart](/picts/areaChart.png)
-	
 	pieChart = vg1.pieChart() # make a pie chart
+![areaChart](/picts/areaChart.png)
 ![pieChart](/picts/pieChart.png)
 
 	stackedBarChart = vg2.barChart(key='y1') # make a stacked bar chart chart
-![stackedBarChart](/picts/stackedBarChart.png)
-
 	multiLines = vg2.lineChart(iter_idx='index') # plot several lines
+![stackedBarChart](/picts/stackedBarChart.png)
 ![multiLinPlot](/picts/multiLinPlot.png)
 
 	stackedAreas = vg2.stackedAreaChart(iter_idx='index') # make a stacked area chart
-![stackedAreaChart](/picts/stackedAreaChart.png)
-
 	stackedBar = vg2.stackedBarChart(iter_idx='index') # make a stacked bar chart
 ![stackedAreaChart](/picts/stackedAreaChart.png)
-
-	groupedBar = vg2.groupedBarChart(iter_idx='index') # make an area chart
 ![groupedHist](/picts/groupedHist.png)
 
+	groupedBar = vg2.groupedBarChart(iter_idx='index') # make an area chart
 	scatter = vg2.scatterChart(iter_idx='index') # make a 2D scatter plot
+![groupedHist](/picts/groupedHist.png)
 ![scatterPlot](/picts/scatterPlot2.png)
 
