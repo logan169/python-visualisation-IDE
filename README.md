@@ -64,11 +64,11 @@ Note that you could also pass a key 'option' containing a personalized option di
     $ d1_line = vis1.linePlot() # plot a line
     $ d1_hist = vis1.histogram() # make an histogram
     
-![line](/line.png)
-![hist](/hist.png)
+![line](/picts/line.png)
+![hist](/picts/hist.png)
     
     $ d2_multiHist = vis2.multiHistogram() #make a multi histogram
-![multi histogram](/multiHist.png)
+![multi histogram](/picts/multiHist.png)
 
 Note that this dataset is higher than the Vis object attribut limit_size (def: 1000) so data are displayed as an animation.
 You could change this with:
@@ -78,12 +78,12 @@ You could change this with:
     $ d4_matrice = vis4.matrice() # make a heat map matrix
     $ d4_matriceWave = vis4.matriceWave() # make a 3D heat map matrix
     
-![matrice](/matrice.png)
-![wave](/wave.png)
+![matrice](/picts/matrice.png)
+![wave](/picts/wave.png)
     
     $ d3_scatterPlot3D = vis3.scatterPlot3D() # Create a 3d scatterplot of dataset
  
- ![wave](/scatter.png)
+ ![wave](/picts/scatter.png)
     
 
     
