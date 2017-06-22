@@ -1,5 +1,41 @@
 
 init = {
+'lineChart':{
+  'visible':False,
+  'json':{}
+},
+'barChart':{
+  'visible':False,
+  'json':{}
+},
+'barChart':{
+  'visible':False,
+  'json':{}
+},
+'stackedBarChart':{
+  'visible':False,
+  'json':{}
+},
+'groupedBarChart':{
+  'visible':False,
+  'json':{}
+},
+'areaChart':{
+  'visible':False,
+  'json':{}
+},
+'stackedAreaChart':{
+  'visible':False,
+  'json':{}
+},
+'scatterChart':{
+  'visible':False,
+  'json':{}
+},
+'pieChart':{
+  'visible':False,
+  'json':{}
+},
 'linePlot':{
 	'visible':False,
 	'data':[{'x':1, 'y':0, 'z': -1},{'x':2, 'y':0, 'z': 2},{'x':3, 'y':0, 'z': 3},{'x':4, 'y':0, 'z': 2}],

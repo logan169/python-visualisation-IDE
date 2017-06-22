@@ -9,16 +9,34 @@
   <!--Vis visualisation lib-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.js"></script>
-  <!--<script type="text/javascript" src="/front/lala_web/vis.js"></script>-->
+
+    <script src="https://vega.github.io/vega-editor/vendor/d3.min.js"></script>
+
+    
+    <script src="{{url_for ('static',filename='lib/vincent_vega/vincent_vega.js')}}"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
 
   </head>
 
   <body>
     <div id="app">
 
-      <!--need to make a variable containing data before otherwises doesn't work with vuejs-->
-      <script>var i = {{input|safe}}</script>
-      
+      <line-chart></line-chart>
+
+      <stacked-bar-chart></stacked-bar-chart>
+
+      <area-chart></area-chart>
+
+      <grouped-bar-chart></grouped-bar-chart>
+
+      <stacked-area-chart></stacked-area-chart>
+
+      <scatter-chart></scatter-chart>
+
+      <pie-chart></pie-chart>
+
+      <bar-chart></bar-chart>
+
       <line-plot></line-plot>
 
       <histogram></histogram>
@@ -32,11 +50,12 @@
 
       <!--need to add dynamic data for component below-->
 
-      <scatter-plot input=i></scatter-plot>
+      <scatter-plot></scatter-plot>
 
 
     </div>
   </body >
+
       <!--Vuejs-->
     <script type="text/javascript" src="{{url_for ('static',filename='js/vue.js')}}"></script>
     <!--display.js-->
