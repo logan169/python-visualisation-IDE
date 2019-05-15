@@ -1,6 +1,12 @@
-# Python2-visualisation-IDE
+# Pythonesk data manipulation finaly bridged with elegant interactives javascript visualization tools solutions.
 
-This project's aim to encapsulate different javacript visualization librairie (Vis.js and Vega-Lite using [vincent](https://vincent.readthedocs.io/en/latest) ) and allow users to create different visualizations from server side and display them in your web application as easily as possible.
+Python is a great language choice for data analysis with librairies like numpy, pandas, scikit-learn but don't get me wrong at the times of writting those lines... it really lacks good scalable and interactive data visualization tools solutions like what could be find in other language like Javascript. 
+
+Here, instead of recreating the wheel by coding an other python visualization librairies from scratch, I've thought it would be smarter to juste make a Python API bridge allowing us to use javascript visualization librairies directly from our python terminal. 
+
+In order to achieve this goal, we encapsulated different javascript visualization librairies:
+ - Vis.js
+ - Vega-Lite (using [vincent](https://vincent.readthedocs.io/en/latest) )
 
 ## Why it is cool
 
