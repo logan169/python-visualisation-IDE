@@ -1,4 +1,4 @@
-# Pythonesk data manipulation finaly bridged with elegant interactives javascript visualization tools solutions.
+# Pythonesk data manipulation finaly bridged with elegant interactives Javascript visualization tools solutions.
 
 Python is a great language choice for data analysis with librairies like numpy, pandas, scikit-learn but don't get me wrong at the times of writting those lines... it really lacks good scalable and interactive data visualization tools solutions like what could be find in other language like Javascript. 
 
