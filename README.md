@@ -1,8 +1,8 @@
-# Pythonesk data manipulation finaly bridged with elegant interactives Javascript visualization tools solutions.
+# Pythonesk data manipulation bridged with elegant interactives Javascript visualization tools solutions.
 
-Python is a great language choice for data analysis with librairies like numpy, pandas, scikit-learn but don't get me wrong at the times of writting those lines... it really lacks good scalable and interactive data visualization tools solutions like what could be find in other language like Javascript. 
+Python is a great language choice for data analysis with librairies like numpy, pandas, scikit-learn but don't get me wrong, it really lacks good scalable & interactive data visualization tools solutions like what could be find in other language like Javascript. 
 
-Here, instead of recreating the wheel by coding an other python visualization librairies from scratch, I've thought it would be smarter to juste make a Python API bridge allowing us to use javascript visualization librairies directly from our python terminal. 
+Here, instead of recreating the wheel by coding an other python visualization librairies from scratch, I've thought it would be smarter to juste make a Python API bridge allowing Python's users to display datas in javascript visualization librairies directly from python code. 
 
 In order to achieve this goal, we encapsulated different javascript visualization librairies:
  - Vis.js
